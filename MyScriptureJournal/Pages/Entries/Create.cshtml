@@ -1,0 +1,54 @@
+﻿@page
+@model MyScriptureJournal.Pages.Entries.CreateModel
+
+        @{
+        ViewData["Title"] = "Create";
+        }
+        
+        <h1>Create</h1>
+        
+    <h4>Entries</h4>
+    <hr />
+    <div class="row">
+    <div class="col-md-4">
+    <form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Entries.Book" class="control-label"></label>
+                <input asp-for="Entries.Book" class="form-control" />
+                <span asp-validation-for="Entries.Book" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Entries.Chapter" class="control-label"></label>
+                <input asp-for="Entries.Chapter" class="form-control" />
+                <span asp-validation-for="Entries.Chapter" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Entries.Verses" class="control-label"></label>
+                <input asp-for="Entries.Verses" class="form-control" />
+                <span asp-validation-for="Entries.Verses" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Entries.DateAdded" class="control-label"></label>
+                <input asp-for="Entries.DateAdded" class="form-control" />
+                <span asp-validation-for="Entries.DateAdded" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Entries.JournalEntry" class="control-label"></label>
+                <input asp-for="Entries.JournalEntry" class="form-control" />
+                <span asp-validation-for="Entries.JournalEntry" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
